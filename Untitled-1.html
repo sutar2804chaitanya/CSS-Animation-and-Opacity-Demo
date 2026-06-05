@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jumping Ball Animation</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center; /* Fixed typo: justifycontent */
+        align-items: center;     /* Fixed typo: alignitems */
+        height: 100vh;
+        background: #f1f1f1;
+        margin: 0;
+    }
+
+    /* Animation Container (The Stage) */
+    .stage {
+        width: 700px;
+        height: 250px;
+        border: 3px solid black;
+        position: relative;
+        background: white;
+        overflow: hidden;
+    }
+
+    /* Ball */
+    .ball {
+        width: 60px;
+        height: 60px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        
+        /* Animation details */
+        animation: jump 4s linear infinite;
+        animation-delay: 3s; /* Waits 3 seconds before starting */
+    }
+
+    /* Keyframes for movement + jump */
+    @keyframes jump {
+        0% {
+            left: 0px;
+            bottom: 20px;
+        }
+        20% {
+            left: 140px;
+            bottom: 150px; /* Up */
+        }
+        40% {
+            left: 280px;
+            bottom: 20px;  /* Down */
+        }
+        60% {
+            left: 420px;
+            bottom: 150px; /* Up */
+        }
+        80% {
+            left: 560px;
+            bottom: 20px;  /* Down */
+        }
+        100% {
+            left: 650px;
+            bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <div class="stage">
+        <div class="ball"></div>
+    </div>
+
+</body>
+</html>
